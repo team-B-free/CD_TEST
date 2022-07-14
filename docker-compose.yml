@@ -1,0 +1,24 @@
+version: "3"
+
+networks:
+  dev_env_network:
+    driver: bridge
+
+services:
+  redis:
+    image: redis:6.0-alpine
+    container_name: gameduo_redis_server
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - dev_env_network
+
+  app:
+    image: adasddasd123/gameduo
+    env_file: .env
+    container_name: gameduo_web_server
+    networks:
+      - dev_env_network
+    ports:
+      - 3000:3000
