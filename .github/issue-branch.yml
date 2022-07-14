@@ -1,0 +1,19 @@
+branchName: '${issue.number}'
+branches:
+  - label: '♻️ 리팩토링'
+    prefix: Refactor/
+  - label: '⚙ 세팅'
+    prefix: Chore/
+  - label: '✅ 테스트'
+    prefix: Test/
+  - label: '✨ 기능'
+    prefix: Feat/
+  - label: '🌎 배포'
+    prefix: Deploy/
+  - label: '🐞 버그 수정'
+    prefix: Fix/
+  - label: '📃 문서'
+    prefix: Docs/
+  - label: '💅 스타일'
+    prefix: Style/
+autoCloseIssue: true

@@ -1,0 +1,40 @@
+{
+  "name": "GameDuo",
+  "version": "1.0.0",
+  "description": "GameDuo 프로젝트입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/bin/www.js",
+    "dev": "nodemon src/bin/www.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/team-B-free/03-GameDuo"
+  },
+  "author": "Team B Free",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-B-free/03-GameDuo/issues"
+  },
+  "homepage": "https://github.com/team-B-free/03-GameDuo#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validation": "^4.1.0",
+    "joi": "^17.6.0",
+    "moment": "^2.29.4",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.2.7",
+    "nodemon": "^2.0.18",
+    "redis": "^4.2.0",
+    "sequelize": "^6.21.3",
+    "winston": "^3.8.1",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2"
+  }
+}
