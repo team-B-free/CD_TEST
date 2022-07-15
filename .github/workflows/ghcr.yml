@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ] # push할 때 동작할 branch를 입력해주세요.
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/cd_test # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
+  DOCKER_IMAGE: ghcr.io/${{ secrets.REPO_PWD }} # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
   VERSION: ${{ github.sha }}
 
 jobs:
@@ -12,8 +12,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: check github actor
-        run: echo ${{ toJSON(github.actor) }}
       - name: Check out source code
         uses: actions/checkout@v2
       - name: Set up docker buildx
