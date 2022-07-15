@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: set lower case owner name
         run: |
-          echo "OWNER_LC=${env.DOCKER_IMAGE}" >>${GITHUB_ENV}
+          echo "OWNER_LC=${{ env.DOCKER_IMAGE }}" >>${GITHUB_ENV}
         env:
           OWNER: '${{ github.repository_owner }}'
       - name: Check out source code
