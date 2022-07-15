@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ] # push할 때 동작할 branch를 입력해주세요
 env:
-  DOCKER_IMAGE: ghcr.io/team-b-free/cd_test # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
+  DOCKER_IMAGE: ghcr.io/team-B-free/cd_test # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
   VERSION: ${{ github.sha }}
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: set lower case owner name
         run: |
-          echo "OWNER_LC=${{ env.DOCKER_IMAGE }}" >>${GITHUB_ENV}
+          echo "OWNER_LC=${{ env.DOCKER_IMAGE }}" >>${env.DOCKER_W}
         env:
           OWNER: '${{ github.repository_owner }}'
       - name: Check out source code
@@ -41,7 +41,7 @@ jobs:
         with:
           builder: ${{ steps.buildx.outputs.name }}
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ github.repository_owner }}:${{ env.VERSION }}
+          tags: ${{ env.DOCKER_W }}:${{ env.VERSION }}
 
   deploy:
     needs: build
