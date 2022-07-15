@@ -12,6 +12,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: check github actor
+        run: echo ${{ toJSON(github.actor) }}
       - name: Check out source code
         uses: actions/checkout@v2
       - name: Set up docker buildx
