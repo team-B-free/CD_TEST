@@ -2,7 +2,7 @@ name: CI/CD Docker
 
 on:
   push:
-    branches: [ main ] # push할 때 동작할 branch를 입력해주세요.
+    branches: [ main ] # push할 때 동작할 branch를 입력해주세요
 env:
   DOCKER_IMAGE: ghcr.io/team-B-free/cd_test # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
   VERSION: ${{ github.sha }}
